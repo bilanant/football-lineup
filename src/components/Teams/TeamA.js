@@ -3,10 +3,13 @@ import React from 'react'
 import '../Teams/TeamA.css';
 import '../Field/Field.css';
 import Player from '../../assets/player.png'
+import TeamLogoA_Small from '../../assets/TeamLogoA_Small.svg'
+import YellowCardField_small from '../../assets/YellowCardField_small.png'
 
 const TeamA = () => {
   return (
     <div className="Team-A">
+      <img className="field-float-logo-team-a" src={TeamLogoA_Small} alt="TeamLogoA_Small" />
       <div className="p-relative h-100">
         <div className="d-flex Team-A-row1">
           <div className="col">
@@ -45,11 +48,13 @@ const TeamA = () => {
           </div>
           <div className="col">
             <img src={Player} alt="Player" />
+            <img className="floating-field-card" src={YellowCardField_small} alt="Yellow Card Field" />
             <br />
             <span className="playerName">Vera</span>
           </div>
           <div className="col">
             <img src={Player} alt="Player" />
+            <img className="floating-field-card" src={YellowCardField_small} alt="Yellow Card Field" />
             <br />
             <span className="playerName">Rodriguez</span>
           </div>

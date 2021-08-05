@@ -31,3 +31,18 @@
     padding: 0 10px;
   }
 }
+
+.yc-wrapper {
+  margin-right: 10px;
+}
+
+.yc {
+  margin: 0 7px;
+  transform: scale(1.2, 1.3)
+}
+
+.rc {
+  vertical-align: baseline;
+  margin-left: 25px;
+  transform: scale(1.2, 1.3)
+}

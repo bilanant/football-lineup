@@ -1,5 +1,14 @@
-.title{
+.title {
   color: #fff; 
   font-size: 65px; 
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
+  transform: translateX(-70px);
+}
+
+.date-time-venue {
+  color: #fff;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  transform: translateX(-70px);
 }

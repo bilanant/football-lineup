@@ -11,6 +11,7 @@ const Header = () => {
       </div>
       <div className="col-sm-9">
         <h2 className="title">MATCH SUMMARY</h2>
+        <p className="date-time-venue">12/8/2021  5:00 PM   CITY STADIUM</p>
       </div>
     </div>
   );
