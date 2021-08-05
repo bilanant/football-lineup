@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 import '../Teams/TeamA.css';
 import '../Field/Field.css';
@@ -6,7 +7,8 @@ import Player from '../../assets/player.png'
 import TeamLogoA_Small from '../../assets/TeamLogoA_Small.svg'
 import YellowCardField_small from '../../assets/YellowCardField_small.png'
 
-const TeamA = () => {
+const TeamA = (props) => {
+  console.log(`props.TeamA_Players***`, props.TeamA_Players)
   return (
     <div className="Team-A">
       <img className="field-float-logo-team-a" src={TeamLogoA_Small} alt="TeamLogoA_Small" />
@@ -81,4 +83,10 @@ const TeamA = () => {
   )
 }
 
-export default TeamA
+const mapStateToProps = (state) => {
+  return {
+    TeamA_Players: state.allPlayers.players.Formation?.Formations.HomeTeamFormation.Row,
+  }
+}
+
+export default connect(mapStateToProps)(TeamA)

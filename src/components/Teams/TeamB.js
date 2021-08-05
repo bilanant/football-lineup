@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 import '../Teams/TeamB.css';
 import '../Field/Field.css';
@@ -38,4 +39,11 @@ const TeamB = () => {
   )
 }
 
-export default TeamB
+const mapStateToProps = (state) => {
+  return {
+    TeamB_Sub: state.allPlayers.players.Formation?.Substitutes.AwayTeam,
+  }
+}
+
+export default connect(mapStateToProps)(TeamB)
+
