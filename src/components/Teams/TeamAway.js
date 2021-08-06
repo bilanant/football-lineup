@@ -1,17 +1,65 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-import '../Teams/TeamB.css';
+import '../Teams/TeamAway.css';
 import '../Field/Field.css';
 import Player from '../../assets/player.png'
 import TeamLogoB_Small from '../../assets/TeamLogoB_Small.svg'
+import YellowCardField_small from '../../assets/YellowCardField_small.png'
+import RedCardField_small from '../../assets/RedCardField_small.png'
 
-const TeamB = () => {
+const TeamAway = (props) => {
+  // console.log(`props.TeamAway_Players***`, props.TeamAway_Players)
+
+  const renderCard = ({ RedCards, YellowCards }) => {
+    // console.log(`card***`, parseInt(RedCards), parseInt(YellowCards))
+    if (parseInt(RedCards)) {
+      return <img className="fb-card" src={RedCardField_small} alt="Card issued" />
+    } else if (parseInt(YellowCards)) {
+      return <img className="fb-card" src={YellowCardField_small} alt="Card issued" />
+    }
+  }
+
+  const renderColumn = (row) => {
+    // console.log(`row.Player***`, Array.isArray(row.Player))
+    if (Array.isArray(row.Player)) {
+      return row.Player.map((column, i) => {
+        // console.log(`column***`, column._attributes);
+        return (
+          <span key={i} className={`col-${i}`}>
+            <img src={Player} alt="Player" />
+            {renderCard(column._attributes)}
+            <span>{column._attributes.Name}</span>
+          </span>
+        )
+      })
+    } else {
+      return (
+        <span className="col-0">
+          <img src={Player} alt="Player" />
+        </span>
+      )
+    }
+
+  }
+
+  const renderTeamAway = () => {
+    if (props.TeamAway_Players) {
+      return props.TeamAway_Players.map((row, i) => {
+        // console.log(`row***`, row);
+        return (<div key={i} className={`row-${i}`}>
+          {renderColumn(row)}
+        </div>)
+      })
+    }
+  }
+
   return (
 
     <div className="Team-B">
       <img className="field-float-logo-team-b" src={TeamLogoB_Small} alt="TeamLogoB_Small" />
-      <div className="p-relative h-100">
+      {renderTeamAway()}
+      {/* <div className="p-relative h-100">
         <div className="d-flex Team-B-row5">
           <div className="col"><img src={Player} alt="Player" /> <br /> <span className="playerName">Nemeth</span> </div>
         </div>
@@ -33,17 +81,24 @@ const TeamB = () => {
 
         <div className="d-flex Team-B-row1">
           <div className="col"><img src={Player} alt="Player" /> <br /> <span className="playerName">Room</span> </div>
-        </div>
-      </div>
+        </div> 
+      </div>*/}
     </div>
   )
 }
 
+// const mapStateToProps = (state) => {
+//   return {
+//     TeamB_Sub: state.allPlayers.players.Formation?.Substitutes.AwayTeam,
+//   }
+// }
+
 const mapStateToProps = (state) => {
   return {
-    TeamB_Sub: state.allPlayers.players.Formation?.Substitutes.AwayTeam,
+    TeamAway_Players: state.allPlayers.players.Formation?.Formations.AwayTeamFormation.Row,
+    TeamAway_Formation: state.allPlayers.players.Formation?.Formations.AwayTeamFormation._attributes.Name,
   }
 }
 
-export default connect(mapStateToProps)(TeamB)
+export default connect(mapStateToProps)(TeamAway)
 
