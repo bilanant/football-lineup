@@ -1,15 +1,21 @@
 .field-main {
   position: relative;
+  height: 600px;
+  padding: 0 0;
 }
 
 .team-left-top {
   position: absolute;
-  top: 0px;
-  left: 14px;
+  top: 0;
+  left: 0;
 }
 
 .team-bottom-right {
   position: absolute;
-  right: 14px;
-  bottom: 0px;
+  right: 2px;
+  bottom: 5px;
+}
+
+.field-bg {
+  position: absolute;
 }

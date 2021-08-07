@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reducers from "./reducers";
 import Welcome from './components/Welcome';
-import Main from './components/Main';
+import App from './App';
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
@@ -17,7 +17,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Route path='/' exact component={Welcome} />
-      <Route path='/match/:page' component={Main} />
+      <Route path='/match/:page' component={App} />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

@@ -17,16 +17,14 @@ const Main = (props) => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <SidePanel />
+    <div className="row align-items-start">
+      <SidePanel />
 
-        <div className="col-lg-9">
-          <div className="row">
-            <Header />
-            <Field />
-            <PlayerList />
-          </div>
+      <div className="col-lg-9">
+        <div className="row">
+          <Header />
+          <Field />
+          <PlayerList />
         </div>
       </div>
     </div>

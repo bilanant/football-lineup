@@ -26,7 +26,7 @@ const PlayerList = ({ TeamHome_Subs }) => {
       return (
         <div key={_attributes.Number} className="row">
           <div className="col-1">{_attributes.Number}</div>
-          <div className="col-auto pr-2">{_attributes.Name}</div>
+          <p className="col-auto pr-2">{_attributes.Name}</p>
           <div className="col-auto">{renderCard(_attributes)}</div>
         </div>
       )
@@ -38,7 +38,7 @@ const PlayerList = ({ TeamHome_Subs }) => {
       return (
         <div key={_attributes.Number} className="row justify-content-end">
           <div className="col-auto">{renderCard(_attributes)}</div>
-          <div className="col-auto pr-2">{_attributes.Name}</div>
+          <p className="col-auto pr-2">{_attributes.Name}</p>
           <div className="col-1">{_attributes.Number}</div>
         </div>
       )
@@ -46,7 +46,7 @@ const PlayerList = ({ TeamHome_Subs }) => {
   }
 
   return (
-    <div className="col-lg-6 text-light">
+    <div className="col-lg-6 pt-3 pt-md-0 text-light">
       {/* Substitutes Heading - Start */}
       <div className="row align-items-center">
         <div className="col-4 text-light">

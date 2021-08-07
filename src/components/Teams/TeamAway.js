@@ -19,28 +19,28 @@ const TeamAway = (props) => {
     if (Array.isArray(row.Player)) {
       return row.Player.map((column, i) => {
         return (
-          <div key={column._attributes.Name} className="col-auto text-light text-center">
+          <div key={column._attributes.Name} className="col text-light text-center">
             <div className="player-icon">
               <img src={Player} alt="Player" />
               <span>
                 {renderCard(column._attributes)}
               </span>
             </div>
-            <p>{column._attributes.Name}</p>
+            <p className="mb-2">{column._attributes.Name}</p>
           </div>
         )
       })
     } else {
       const { Name } = row.Player._attributes
       return (
-        <div className="col-auto text-light text-center">
+        <div className="col text-light text-center">
           <div className="player-icon">
             <img src={Player} alt="Player" />
             <span>
               {renderCard(row.Player._attributes)}
             </span>
           </div>
-          <p>{Name}</p>
+          <p className="mb-2">{Name}</p>
         </div>
       )
     }
@@ -50,7 +50,7 @@ const TeamAway = (props) => {
   const renderTeamAway = () => {
     if (props.TeamAway_Players) {
       return props.TeamAway_Players.map((row, i) => {
-        return (<div key={i} className={`row mb-4 justify-content-center row-${i}`}>
+        return (<div key={i} className={`row mb-3 mt-2 justify-content-between row-${i}`}>
           {renderColumn(row)}
         </div>)
       }).reverse()

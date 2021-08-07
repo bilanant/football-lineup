@@ -9,12 +9,15 @@ import TeamAway from '../Teams/TeamAway'
 const Field = () => {
   return (
     <div className="col-lg-6 field-main">
-      <img src={Grass} className="w-100" alt="Field" />
+      <div className="field-bg">
+        <img height="600px" src={Grass} className="w-100" alt="Field" />
+
+      </div>
       <span className="team-left-top">
-        <img src={TeamLogoHome_Small} alt="TeamLogoHome_Small" />
+        <img width="50px" src={TeamLogoHome_Small} alt="TeamLogoHome_Small" />
       </span>
       <span className="team-bottom-right">
-        <img src={TeamLogoAway_Small} alt="TeamLogoAway_Small" />
+        <img width="42px" src={TeamLogoAway_Small} alt="TeamLogoAway_Small" />
       </span>
       <TeamHome />
       <TeamAway />
